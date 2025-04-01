@@ -25,7 +25,8 @@
 
 - 考虑到部分机场热门地区节点有高低倍率之分，根据普遍情况设置了自动选择组（仅保留标准节点）和手动组（全部节点）
 
-- 本项目有适用于mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
+- 本项目提供适用于mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
+mihomo使用mrs格式文件，Stash使用yaml格式文件
 
 - 本项目的订阅转换模板/yaml文件是参考 ACL4SSR，Aethersailor等规则修改而来，基于作者个人理解做出的修改，另外我的更新不固定建议每2-3周下载一次配置文件替换，以获得最佳体验/也可配合Substore一同使用达到如同使用订阅链接的效果(每次更新订阅即会自动拉取配置文件更新，无需手动下载上传)，同时感谢各位的大力支持
 
@@ -34,6 +35,7 @@
 
 [Sub-store直达链接](https://github.com/sub-store-org/Sub-Store)
 
+若无所需游戏规则，可以向该项目提交请求或者自己抓包获取后给该项目提交请求
 [游戏规则相关内容](https://github.com/FQrabbit/SSTap-Rule)
 
 ### 标准版
@@ -116,7 +118,7 @@ Openclash
 
 •[MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat)
 
-•[SSTap](https://github.com/FQrabbit/SSTap-RuleSSTap)
+•[SSTap](https://github.com/FQrabbit/SSTap-Rule)
 
 
 # Tip

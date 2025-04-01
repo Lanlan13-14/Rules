@@ -1,0 +1,118 @@
+name: Sync and Convert ASN Rules to MRS
+
+on:
+  schedule:
+    - cron: '45 18 * * *'  # 北京时间 02:45 执行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Install dependencies and mihomo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+          # 下载 mihomo
+          version=$(curl -sL https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt)
+          curl -sL "https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-${version}.gz" | gunzip -c > mihomo
+          chmod +x mihomo
+          sudo mv mihomo /usr/local/bin/
+
+      - name: Create temporary folders
+        run: |
+          mkdir -p rules/IP/asn rules/IP/asn-yaml
+
+      - name: Get total number of .list files
+        run: |
+          response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/MetaCubeX/meta-rules-dat/contents/asn?ref=meta")
+          total_files=$(echo "$response" | jq -r '[.[] | select(.name | test(".list$"))] | length')
+          echo "Total .list files: $total_files"
+          echo "TOTAL_FILES=$total_files" >> $GITHUB_ENV
+
+      - name: Download .list files via GitHub API
+        run: |
+          cd rules/IP/asn
+          total_files=$TOTAL_FILES
+          per_page=1000
+          
+          if [ $total_files -le $per_page ]; then
+            response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/MetaCubeX/meta-rules-dat/contents/asn?ref=meta")
+            files=$(echo "$response" | jq -r '.[].download_url' | grep '\.list$')
+          else
+            total_pages=$((($total_files + $per_page - 1) / $per_page))
+            files=""
+            for ((page=1; page<=$total_pages; page++)); do
+              response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+                "https://api.github.com/repos/MetaCubeX/meta-rules-dat/contents/asn?ref=meta&page=$page&per_page=$per_page")
+              files+=$(echo "$response" | jq -r '.[].download_url' | grep '\.list$')$'\n'
+            done
+          fi
+
+          for url in $files; do
+            echo "Downloading $url"
+            curl -sL "$url" -O
+          done
+          cd -
+
+      - name: Convert .list files to .yaml (filter out private IPs)
+        run: |
+          for file in rules/IP/asn/*.list; do
+            [ -f "$file" ] || continue
+            base=$(basename "$file" .list)
+            output="rules/IP/asn-yaml/${base}.yaml"
+            echo "Converting $file to $output"
+            echo "payload:" > "$output"
+
+            valid=false
+            while IFS= read -r line; do
+              if [[ -n "$line" && ! "$line" =~ ^(10\..*|172\.(1[6-9]|2[0-9]|3[01])\..*|192\.168\..*|169\.254\..*|22[4-9]\..*|2[3-5][0-9]\..*)$ ]]; then
+                echo "  - '$line'" >> "$output"
+                valid=true
+              fi
+            done < "$file"
+
+            # 如果 YAML 文件内容为空（只包含 "payload:"），则删除该文件
+            if ! $valid; then
+              echo "Deleting empty YAML file: $output"
+              rm -f "$output"
+            fi
+          done
+
+      - name: Convert .yaml files to .mrs
+        run: |
+          for file in rules/IP/asn-yaml/*.yaml; do
+            [ -f "$file" ] || continue
+            base=$(basename "$file" .yaml)
+            output="rules/IP/${base}.mrs"
+            echo "Converting $file to $output"
+            mihomo convert-ruleset ipcidr yaml "$file" "$output"
+          done
+
+      - name: Move YAML files to rules/IP
+        run: |
+          mv rules/IP/asn-yaml/*.yaml rules/IP/
+
+      - name: Remove temporary folders
+        run: |
+          rm -rf rules/IP/asn rules/IP/asn-yaml
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git diff-index --quiet HEAD -- || (git commit -m "Updated ASN rules (filtered private IPs, converted to MRS)" && git push)

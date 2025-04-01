@@ -2,66 +2,122 @@ name: Sync and Convert Game Rules to MRS
 
 on:
   schedule:
-    - cron: '0 1 * * 1'  # 每周一 UTC 01:00（北京时间09:00）
+    - cron: '30 18 * * *'  # 北京时间 02:30 执行
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  game_rules_to_mrs:
+  convert:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Set up Git user
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Set up Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-    - name: Install mihomo
-      run: |
-        version=$(curl -sL https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt)
-        curl -sL "https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-${version}.gz" | \
-          gunzip -c > /usr/local/bin/mihomo && chmod +x /usr/local/bin/mihomo
+      - name: Install dependencies and mihomo
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq perl
+          # 下载并安装 mihomo
+          version=$(curl -sL https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt)
+          curl -sL "https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-${version}.gz" | gunzip -c > mihomo
+          chmod +x mihomo
+          sudo mv mihomo /usr/local/bin/
 
-    - name: Create folder to store the YAML files
-      run: |
-        mkdir -p rules/Game/action2
+      - name: Create temporary folder for YAML files
+        run: |
+          mkdir -p rules/Game/action2
 
-    - name: Fetch Game Rules from repository
-      run: |
-        # 拉取所有以 .yaml 结尾的文件
-        curl -sL "https://github.com/Lanlan13-14/Rules/raw/main/rules/Game/*.yaml" -o rules/Game/action2/
+      - name: Get total number of YAML files
+        run: |
+          # 获取文件总数
+          response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/Lanlan13-14/Rules/contents/rules/Game?ref=main")
+          total_files=$(echo "$response" | jq -r '[.[] | select(.name | test(".yaml$"))] | length')
+          echo "Total YAML files: $total_files"
+          echo "TOTAL_FILES=$total_files" >> $GITHUB_ENV
 
-    - name: Check, Convert, and Clean Up YAML files
-      run: |
-        # 遍历 action2 目录下的所有 YAML 文件并逐个处理
-        for file in rules/Game/action2/*.yaml; do
-          # 创建临时文件
-          temp_file="rules/Game/action2/temp_${file##*/}"
-          > "$temp_file"
+      - name: Download YAML files via GitHub API
+        run: |
+          cd rules/Game/action2
+          total_files=$TOTAL_FILES
+          per_page=1000
           
-          # 逐行处理文件
-          while IFS= read -r line; do
-            # 删除单引号内的空格
-            line=$(echo "$line" | sed "s/' *[^']* *'/\1/g")
-            echo "$line" >> "$temp_file"
-          done < "$file"
-          
-          # 使用 mihomo 转换文件为 MRS 格式
-          output="rules/Game/${file##*/}"
-          mihomo convert-ruleset ipcidr yaml "$temp_file" "$output"
+          if [ $total_files -le $per_page ]; then
+            # 如果总文件数小于等于1000，直接拉取所有文件
+            response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/Lanlan13-14/Rules/contents/rules/Game?ref=main")
+            files=$(echo "$response" | jq -r '.[].download_url' | grep '\.yaml$')
+            for url in $files; do
+              echo "Downloading $url"
+              curl -sL "$url" -O
+            done
+          elif [ $total_files -le 2000 ]; then
+            # 如果总文件数小于等于2000，分两次拉取
+            for page in 1 2; do
+              echo "Fetching page $page"
+              response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+                "https://api.github.com/repos/Lanlan13-14/Rules/contents/rules/Game?ref=main&page=$page&per_page=$per_page")
+              files=$(echo "$response" | jq -r '.[].download_url' | grep '\.yaml$')
+              for url in $files; do
+                echo "Downloading $url"
+                curl -sL "$url" -O
+              done
+            done
+          elif [ $total_files -le 3000 ]; then
+            # 如果总文件数小于等于3000，分三次拉取
+            for page in 1 2 3; do
+              echo "Fetching page $page"
+              response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+                "https://api.github.com/repos/Lanlan13-14/Rules/contents/rules/Game?ref=main&page=$page&per_page=$per_page")
+              files=$(echo "$response" | jq -r '.[].download_url' | grep '\.yaml$')
+              for url in $files; do
+                echo "Downloading $url"
+                curl -sL "$url" -O
+              done
+            done
+          else
+            # 如果文件数大于3000，分四次拉取
+            total_pages=$((($total_files + $per_page - 1) / $per_page))
+            for ((page=1; page<=$total_pages; page++)); do
+              echo "Fetching page $page"
+              response=$(curl -s -H "Accept: application/vnd.github.v3+json" \
+                "https://api.github.com/repos/Lanlan13-14/Rules/contents/rules/Game?ref=main&page=$page&per_page=$per_page")
+              files=$(echo "$response" | jq -r '.[].download_url' | grep '\.yaml$')
+              for url in $files; do
+                echo "Downloading $url"
+                curl -sL "$url" -O
+              done
+            done
+          fi
+          cd -
 
-          # 删除临时文件和原始 YAML 文件
-          rm -f "$temp_file" "$file"
-        done
+      - name: Process and convert each YAML file
+        run: |
+          # 对每个 YAML 文件，先使用 Perl 清除单引号内前后多余空格，再调用 mihomo 转换
+          for file in rules/Game/action2/*.yaml; do
+            echo "Processing file: $file"
+            # Perl 命令：将单引号内的内容两侧多余空格去掉，保留内容
+            perl -i -pe "s/'\s*([^']*?)\s*'/'\$1'/g" "$file"
+            base=$(basename "$file" .yaml)
+            output="rules/Game/${base}.mrs"
+            echo "Converting $file to $output"
+            mihomo convert-ruleset ipcidr yaml "$file" "$output"
+          done
 
-    - name: Commit and Push Changes
-      run: |
-        git add .
-        git diff-index --quiet HEAD -- || (git commit -m "Converted game rules to MRS format" && git push)
+      - name: Remove temporary folder
+        run: |
+          rm -rf rules/Game/action2
+
+      - name: Commit and Push Changes
+        run: |
+          git add .
+          git diff-index --quiet HEAD -- || (git commit -m "Converted game rules to MRS format" && git push)
