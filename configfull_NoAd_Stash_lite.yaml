@@ -280,6 +280,7 @@ rules:
   - GEOSITE,gfw,节点选择
   - GEOSITE,geolocation-!cn,节点选择
   - GEOSITE,cn,全球直连
+  - GEOIP,private,全球直连,no-resolve
   - GEOIP,cn,全球直连,no-resolve
   - MATCH,Final
 rule-anchor:
