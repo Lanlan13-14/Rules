@@ -1,7 +1,7 @@
 # 直连网站补充列表防止代理打开加载失败
 # AUTHOR: Lanlan13-14
 # REPO: https://github.com/Lanlan13-14/rule
-# UPDATED: 2025-01-15 23:58:51
+# UPDATED: 2025-04-17 10:42:35
 DOMAIN-SUFFIX,openwrt.ai
 DOMAIN,dl.openwrt.ai
 DOMAIN,digvps.com
@@ -20,3 +20,7 @@ DOMAIN-SUFFIX,5ddd.com
 DOMAIN-SUFFIX,mirrors.vsean.net
 DOMAIN-SUFFIX,noedgeai.com
 DOMAIN-SUFFIX,edu.cn
+DOMAIN-SUFFIX,kkrb.net
+DOMAIN-SUFFIX,xrgzs.top
+DOMAIN-SUFFIX,weibo.cn
+DOMAIN,weibo.cn
