@@ -1,7 +1,7 @@
 # 直连网站补充列表防止代理打开加载失败
 # AUTHOR: Lanlan13-14
 # REPO: https://github.com/Lanlan13-14/rule
-# UPDATED: 2025-04-17 10:42:35
+# UPDATED: 2025-04-23 20:39:35
 DOMAIN-SUFFIX,openwrt.ai
 DOMAIN,dl.openwrt.ai
 DOMAIN,digvps.com
@@ -25,3 +25,32 @@ DOMAIN-SUFFIX,xrgzs.top
 DOMAIN-SUFFIX,weibo.cn
 DOMAIN,weibo.cn
 DOMAIN,litv.jscz.de
+DOMAIN,wxcdn.weixin.qq.com
+DOMAIN,wx.qlogo.cn
+DOMAIN,taobao.com
+DOMAIN-SUFFIX,alibaba-inc.com 
+DOMAIN-SUFFIX,tmall.com 
+DOMAIN-SUFFIX,alibaba.com
+DOMAIN-SUFFIX,alicdn.com
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN,g.alicdn.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,pinduoduo.com
+DOMAIN-SUFFIX,douyin.com
+DOMAIN-SUFFIX,douyinmall.com
+DOMAIN-SUFFIX,ixigua.com
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,weibo.com 
+DOMAIN,weibo.cn
+DOMAIN,sinaimg.cn
+DOMAIN,login.sina.com.cn
+DOMAIN-SUFFIX,xianyu.com
+DOMAIN,xianyu.m.taobao.com
+DOMAIN-SUFFIX,mogu.com
+DOMAIN-SUFFIX,xiaohongshu.com
+DOMAIN-SUFFIX,xhsimg.com
+DOMAIN,music.163.com
+DOMAIN,music.126.net
+DOMAIN,y.qq.com
+DOMAIN,mail.qq.com
