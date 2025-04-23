@@ -1,23 +1,23 @@
 name: Sync and Compile BanAd Rules  
-  
+
 on:  
   schedule:  
     - cron: '0 18 * * *'  # 北京时间 02:00 执行  
   workflow_dispatch:  
-  
+
 permissions:  
   contents: write  
-  
+
 jobs:  
   banad_rules:  
     runs-on: ubuntu-latest  
-  
+
     steps:  
     - name: Checkout the repository  
       uses: actions/checkout@v4  
       with:  
         token: ${{ secrets.GITHUB_TOKEN }}  
-  
+
     - name: Set up Git user  
       run: |  
         git config user.name "github-actions[bot]"  
@@ -36,7 +36,7 @@ jobs:
         # 下载 BanAd 规则文件  
         curl -sL "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/qx.list" -o rules/Domain/qx.list  
         curl -sL "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ads-all.list" -o rules/Domain/category-ads-all.list  
-  
+
     - name: Extract DOMAIN rules from qx.list  
       run: |  
         # 提取 qx.list 中的 DOMAIN 规则  
@@ -61,4 +61,6 @@ jobs:
     - name: Commit and Push Changes  
       run: |  
         git add .  
-        git diff-index --quiet HEAD -- || (git commit -m "Updated BanAd rules (qx.list -> banAd.mrs)" && git push)
+        git commit -m "Updated BanAd rules (qx.list -> banAd.mrs)" || true  # 如果没有变更，commit 会失败，`|| true` 避免脚本报错  
+        git pull --rebase  # 先同步远程最新代码，避免 push 失败  
+        git push

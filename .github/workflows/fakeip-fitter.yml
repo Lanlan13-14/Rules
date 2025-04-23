@@ -1,0 +1,52 @@
+name: Sync and Compile FakeIP-Fitter Rules
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # 北京时间 04:00 执行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fakeip_fitter_rules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Git user
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Install mihomo
+      run: |
+        version=$(curl -sL https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt)
+        curl -sL "https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-${version}.gz" | \
+          gunzip -c > /usr/local/bin/mihomo && chmod +x /usr/local/bin/mihomo
+
+    - name: Fetch FakeIP-Fitter Rules
+      run: |
+        mkdir -p rules/Domain  # 确保目录存在
+
+        # 下载 fakeip-fitter.list 规则文件
+        curl -sL "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/Domain/fakeip-fitter.list" -o rules/Domain/fakeip-fitter.list
+
+    - name: Convert FakeIP-Fitter Rules to YAML
+      run: |
+        echo "payload:" > rules/Domain/fakeip-fitter.yaml
+        sort -u rules/Domain/fakeip-fitter.list | awk '{print "  - \047" $0 "\047"}' >> rules/Domain/fakeip-fitter.yaml
+
+    - name: Convert FakeIP-Fitter Rules to MRS
+      run: |
+        # 使用 mihomo 转换为 MRS 格式
+        mihomo convert-ruleset domain yaml rules/Domain/fakeip-fitter.yaml rules/Domain/fakeip-fitter.mrs
+
+    - name: Commit and Push Changes
+      run: |
+        git add .
+        git diff-index --quiet HEAD -- || (git commit -m "Updated FakeIP-Fitter rules (fakeip-fitter.list -> fakeip-fitter.mrs)" && git push)
