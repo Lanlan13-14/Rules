@@ -315,6 +315,24 @@ function main(config) {
   return config;
 }
 ```
+#### 添加fakeip自定义过滤
+以example.com为例
+```
+// 读取 YAML 内容
+const yaml = ProxyUtils.yaml.safeLoad($content ?? $files[0])
+
+// 确保 dns.fake-ip-filter 是数组
+yaml.dns ??= {}
+yaml.dns['fake-ip-filter'] ??= []
+
+// 添加新的域名（避免重复添加）
+if (!yaml.dns['fake-ip-filter'].includes('example.com')) {
+    yaml.dns['fake-ip-filter'].push('example.com')
+}
+
+// 重新转为字符串
+$content = ProxyUtils.yaml.dump(yaml)
+```
 #### 添加自定义规则
 仍然以添加backhome为例输入以下代码
 ```
