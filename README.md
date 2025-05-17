@@ -92,18 +92,23 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 •Windows/MacOS/Linux
 
 
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://github.com/xishang0128/clash-meta-party)[Clash-meta-Party](https://github.com/xishang0128/clash-meta-party)（若出现DNS泄漏请打开严格路由）
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://github.com/xishang0128/clash-meta-party)[Mihomo-Party](https://github.com/mihomo-party-org/mihomo-party)（若出现DNS泄漏请打开严格路由）
+>
+<a href="https://apps.apple.com/us/app/clash-mi/id6744321968"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
 
 
 •Android
-
+>
 [![Flclash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash-mini.png)](https://github.com/chen08209/FlClash)[FlClash](https://github.com/chen08209/FlClash)
-
-
+>
+<a href="https://github.com/KaringX/clashmi"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
 •iOS
-
+>
+<a href="https://apps.apple.com/us/app/clash-mi/id6744321968"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
 [![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://apps.apple.com/app/stash/id1596063349?platform=iphone&l=zh-CN)[Stash](https://apps.apple.com/app/stash/id1596063349?platform=iphone&l=zh-CN)
-
+>
 [![Pharos](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/pharos-mini.png)](https://apps.apple.com/us/app/pharos-pro/id1456610173)[Pharos](https://apps.apple.com/us/app/pharos-pro/id1456610173)
 
 •鸿蒙/HarmonyOS
