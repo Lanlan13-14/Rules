@@ -1077,6 +1077,7 @@ payload:
   - update.crashlytics.com
   - update.googleapis.com
   - wear.googleapis.com
+  - webchannel-alkalimakersuite-pa.clients6.google.com
   - www-google-analytics.l.google.com
   - www-googletagmanager.l.google.com
   - www.destinationurl.com
