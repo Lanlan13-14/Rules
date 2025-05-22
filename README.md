@@ -88,6 +88,10 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 
 **[configfull_NoAd_Stash_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash_lite.yaml)**
 
+## 一键生成配置/Generate configuration with one click
+地址
+https://mihomo.haxtop.ggff.net/
+>
 ## 客户端推荐/Client Recommendation
 •Windows/MacOS/Linux
 >
@@ -149,6 +153,7 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 
 •[SSTap](https://github.com/FQrabbit/SSTap-Rule)
 
+•[Kwisma](https://github.com/Kwisma/cf-worker-mihomo)
 
 # Tip
 生活是条双行道，
