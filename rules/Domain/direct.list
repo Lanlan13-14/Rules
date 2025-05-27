@@ -28,8 +28,8 @@ DOMAIN,litv.jscz.de
 DOMAIN,wxcdn.weixin.qq.com
 DOMAIN,wx.qlogo.cn
 DOMAIN,taobao.com
-DOMAIN-SUFFIX,alibaba-inc.com 
-DOMAIN-SUFFIX,tmall.com 
+DOMAIN-SUFFIX,alibaba-inc.com
+DOMAIN-SUFFIX,tmall.com
 DOMAIN-SUFFIX,alibaba.com
 DOMAIN-SUFFIX,alicdn.com
 DOMAIN-SUFFIX,mmstat.com
@@ -41,7 +41,7 @@ DOMAIN-SUFFIX,douyinmall.com
 DOMAIN-SUFFIX,ixigua.com
 DOMAIN-SUFFIX,byteimg.com
 DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,weibo.com 
+DOMAIN-SUFFIX,weibo.com
 DOMAIN,weibo.cn
 DOMAIN,sinaimg.cn
 DOMAIN,login.sina.com.cn
@@ -57,6 +57,9 @@ DOMAIN,mail.qq.com
 DOMAIN-SUFFIX,lottefuture.com
 DOMAIN,api-verify.dutils.com
 DOMAIN,sdk.push.mob.com
-DOMAIN-SUFFIX,prts.plus
+DOMAIN,maa.plus
 DOMAIN-SUFFIX,zoot.plus
+DOMAIN,prts.plus
 DOMAIN-SUFFIX,maa.plus
+DOMAIN,zoot.plus
+DOMAIN,vaultwarden.youguess.site
