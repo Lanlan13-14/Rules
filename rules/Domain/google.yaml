@@ -847,6 +847,7 @@ payload:
   - alt7-mtalk.google.com
   - alt8-mtalk.google.com
   - analytics.google.com
+  - android.googlesource.com
   - app-analytics-services.com
   - app-measurement-cn.com
   - app-measurement.com
