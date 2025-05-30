@@ -1,5 +1,6 @@
 payload:
   - '*.compose-spec.io'
+  - '*.digvps.com'
   - '*.dl.google.com'
   - '*.docker.com'
   - '*.docker.io'
