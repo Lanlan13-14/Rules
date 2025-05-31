@@ -1,9 +1,19 @@
+███╗   ███╗ █████╗ ██╗███╗   ██╗████████╗██╗   ██╗███████╗     ██████╗ 
+████╗ ████║██╔══██╗██║████╗  ██║╚══██╔══╝██║   ██║██╔════╝    ██╔═══██╗
+██╔████╔██║███████║██║██╔██╗ ██║   ██║   ██║   ██║█████╗      ██║   ██║
+██║╚██╔╝██║██╔══██║██║██║╚██╗██║   ██║   ██║   ██║██╔══╝      ██║   ██║
+██║ ╚═╝ ██║██║  ██║██║██║ ╚████║   ██║   ╚██████╔╝███████╗    ╚██████╔╝
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚══════╝     ╚═════╝ 
+                                                                      
+                        配置维护中，请稍候……
+
+
 # 锚点区
-Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点, 全球直连]}
+Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 香港-Select, 香港-Auto, 新加坡-Select, 新加坡-Auto, 日本-Select, 日本-Auto, 台湾-Select, 台湾-Auto, 美国-Select, 美国-Auto, 欧洲-Select, 欧洲-Auto, 全部节点, 自建/家宽-Select, 全球直连]}
 
-Direct_first: &Direct_first {type: select, proxies: [全球直连, 节点选择,  香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点]}
+Direct_first: &Direct_first {type: select, proxies: [全球直连, 节点选择, 香港-Select, 香港-Auto, 新加坡-Select, 新加坡-Auto, 日本-Select, 日本-Auto, 台湾-Select, 台湾-Auto, 美国-Select, 美国-Auto, 欧洲-Select, 欧洲-Auto, 全部节点, 自建/家宽-Select]}
 
-Include_all: &Include_all {type: select, proxies: [节点选择, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点, 全球直连], include-all: true, exclude-filter: "(?i)(🟢 直连)"}
+Include_all: &Include_all {type: select, proxies: [节点选择, 香港-Select, 香港-Auto, 新加坡-Select, 新加坡-Auto, 日本-Select, 日本-Auto, 台湾-Select, 台湾-Auto, 美国-Select, 美国-Auto, 欧洲-Select, 欧洲-Auto, 全部节点, 自建/家宽-Select, 全球直连], include-all: true, exclude-filter: "(?i)(🟢 直连)"}
 
 PProviders: &PProviders {type: http, interval: 86400, health-check: {enable: true, url: 'https://www.apple.com/library/test/success.html', interval: 300}, filter: '^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))'}
 
@@ -203,7 +213,7 @@ proxy-groups:
   - {name: 全球直连, type: select, proxies: [🟢 直连, 🔗 代理], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png"}
   - {name: 隐私拦截, type: select, proxies: [🚫 拒绝, ⚪ 丢弃 ,🟢 直连, 🔗 代理], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/block.png"}
   - {name: Final, type: select, <<: *Include_all,  icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png"}
-  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?i)(自建|CF|The_house|private)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
+  - {name: 自建/家宽手动, type: select, include-all: true, filter: "(?i)(自建|CF|The_house|private)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
   - {name: 香港节点, type: select, proxies: [香港自动, 香港均衡], include-all: true, filter: "(?i)(港|hk|hongkong|Hong Kong)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Hongkong.png"}
   - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, filter: "(?i)(新|🇸🇬|SG|singapore)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png"}
   - {name: 日本节点, type: select, proxies: [日本自动, 日本均衡], include-all: true, filter: "(?i)(日本|🇯🇵|JP|Japan)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png"}
