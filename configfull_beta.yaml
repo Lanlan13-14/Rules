@@ -157,9 +157,12 @@ dns:
   proxy-server-nameserver:
     - quic://dns.alidns.com/dns-query
     - https://sm2.doh.pub/dns-query 
-  nameserver:
+  direct-nameserver:
     - quic://dns.alidns.com/dns-query
     - https://sm2.doh.pub/dns-query
+  nameserver:
+    - https://dns.google/dns-query
+    - https://dns.cloudflare.com/dns-query
 
 proxies: 
   - name: "🟢 直连"
