@@ -25,6 +25,12 @@
 >
 > Once you use and copy any file of this project, you are deemed to have accepted this disclaimer.
 
+>[!NOTE]
+> ## 关于Smart策略组相关
+> Smart策略组由于其内核的复杂性，我考虑在其稳定后再加入
+>
+>Due to the complexity of the Smart Strategy Group's core, I am considering adding it after it becomes stable.
+>
 - 本项目涉及的文件仅用于资源共享和学习研究，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断，有Bug建议可以提issue.
 
 - 请勿将本项目的任何内容用于商业或非法目的，否则后果自负.
@@ -95,7 +101,7 @@ https://mihomo.haxtop.ggff.net/
 ## 客户端推荐/Client Recommendation
 •Windows/MacOS/Linux
 >
-<a href="https://github.com/mihomo-party-org/mihomo-party"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Mihomo-party</a>
+<a href="https://github.com/xishang0128/sparkle"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Sparkle</a>
 >
 <a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
 >
@@ -160,13 +166,18 @@ https://mihomo.haxtop.ggff.net/
 
 •[Kwisma](https://github.com/Kwisma/cf-worker-mihomo)
 
-# Tip
-生活是条双行道，
-这是一个简单而深刻，且不可否认的事实。如遇问题或建议欢迎指出，同时确保你的帖子包含对他人来说有用的细节和信息。通过Github社区分享你的发现。同样地分享你遇到的问题
-也感谢每一位为该项目做出贡献的开发者，是他们为该项目添砖加瓦
-请不要成为一只“吸取帮助的吸血鬼”
-
-Life is a two-way street.
-This is a simple yet profound and undeniable fact. If you encounter any problems or have suggestions, feel free to point them out, while ensuring that your post contains useful details and information for others. Share your discoveries with the GitHub community. Likewise, share the problems you've encountered.
-We also thank every developer who has contributed to this project; it is their efforts that have helped build and improve it.
-Please do not become a 'help vampire'.
+> [!TIP]
+> **生活是一条双行道，这是一个简单而深刻的事实。**  
+> 如果你在使用过程中遇到问题或有任何建议，欢迎指出。请确保你的帖子包含对他人有用的细节与信息，并通过 GitHub 社区分享你的发现。  
+> 同样地，也欢迎分享你遇到的问题。  
+> 感谢每一位为本项目做出贡献的开发者，正是他们的努力让项目不断进步。  
+> 请不要成为只索取不回馈的“伸手党”。
+>
+> **Life is a two-way street. This is a simple, profound, and undeniable truth.**  
+> If you encounter any problems or have suggestions, feel free to report them. Just make sure your post includes helpful details and information for others.  
+> Share your findings with the GitHub community — and also share the issues you’ve run into.  
+> We’re grateful to every developer who has contributed to this project; your efforts build the foundation we stand on.  
+> Please don’t be a “help vampire.”
+>
+> 如果你觉得这个项目对你有帮助，欢迎点击右上角的 ⭐Star 支持我们，让更多人了解并使用这个项目。  
+> If you find this project helpful, please click ⭐Star in the upper-right corner to support us — and help more people discover and use it.
