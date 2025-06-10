@@ -3,6 +3,9 @@ payload:
 - DOMAIN-SUFFIX,xptvhelper.link
 #XPTV主站-部分地区可以直连自行尝试
 # - DOMAIN,infuseku.xyz
+#直播
+#肥羊
+- DOMAIN,myip.ipip.net
 #iCloud同步
 - DOMAIN,gateway.icloud.com
 - DOMAIN,metrics.icloud.com
