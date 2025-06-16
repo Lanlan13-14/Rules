@@ -6,6 +6,7 @@ payload:
 #直播
 #肥羊
 - DOMAIN,myip.ipip.net
+- DOMAIN,r.inews.qq.com
 #iCloud同步
 - DOMAIN,gateway.icloud.com
 - DOMAIN,metrics.icloud.com
