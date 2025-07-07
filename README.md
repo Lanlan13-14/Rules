@@ -57,42 +57,29 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 
 ### 标准版/Standard
 
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)
 **[configfull.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)**
 
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml)Stash使用/For Stash➡️
-**[configfull_Stash.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml)**
 
 ##### 无广告拦截版/No ad blocking version
 
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)
 
 **[configfull_NoAd.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)**
-
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash.yaml)Stash使用/For Stash➡️
-
-**[configfull_NoAd_Stash.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash.yaml)**
 
 ### Lite版本/Lite version
 ###### 该版本高度依赖Geo数据库，请及时更新您的数据库/This version is highly dependent on the Geo database, please update your database in time.
 
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)
 
 **[configfull_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)**
 
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml)Stash使用/For Stash➡️
-
-**[configfull_Stash_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml)**
 
 ##### 无广告拦截版/No ad blocking version
 
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)
 
 **[configfull_NoAd_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)**
-
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash_lite.yaml)Stash使用/For Stash➡️
-
-**[configfull_NoAd_Stash_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash_lite.yaml)**
 
 ## 一键生成配置/Generate configuration with one click
 地址
@@ -108,17 +95,17 @@ https://mihomo.haxtop.ggff.net/
 >
 •Android
 >
-<a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
->
 <a href="https://github.com/KaringX/clashmi"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
+<a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
 >
 •iOS
 >
 <a href="https://apps.apple.com/us/app/pharos-pro/id1456610173"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/pharos.png" width="32" style="vertical-align:middle;"/> Pharos</a>
 >
-<a href="https://apps.apple.com/app/stash/id1596063349?platform=iphone&l=zh-CN"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash.png" width="32" style="vertical-align:middle;"/> Stash</a>
->
 <a href="https://apps.apple.com/us/app/clash-mi/id6744321968"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
+<a href="https://apps.apple.com/app/stash/id1596063349?platform=iphone&l=zh-CN"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash.png" width="32" style="vertical-align:middle;"/> Stash</a>
 >
 >
 •HarmonyOS
