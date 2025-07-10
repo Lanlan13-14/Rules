@@ -83,7 +83,7 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 
 ## 一键生成配置/Generate configuration with one click
 地址
-https://mihomo.haxtop.ggff.net/
+https://sub.ikar.eu.org/
 >
 ## 客户端推荐/Client Recommendation
 •Windows/MacOS/Linux
