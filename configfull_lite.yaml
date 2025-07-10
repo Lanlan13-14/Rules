@@ -143,14 +143,14 @@ dns:
     - "rule-set:fakeip_filter_domain"
     - "geosite:cn,category-games@cn,private"
   default-nameserver:
-    - 223.5.5.5
     - 119.29.29.29
+    - 180.184.1.1
   proxy-server-nameserver:
-    - quic://dns.alidns.com/dns-query
-    - https://sm2.doh.pub/dns-query 
+    - https://doh.pub/dns-query
+    - https://101.34.254.32/ihtw 
   direct-nameserver:
-    - quic://dns.alidns.com/dns-query
-    - https://sm2.doh.pub/dns-query
+    - https://doh.pub/dns-query
+    - https://101.34.254.32/ihtw
   nameserver:
     - https://dns.google/dns-query
     - https://dns.cloudflare.com/dns-query

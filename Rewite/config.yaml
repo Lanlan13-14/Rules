@@ -14,14 +14,17 @@ dns:
   fake-ip-filter:
     - "rule-set:fakeip_filter_domain,game_cn_domain,bank_cn_domain,wechat_domain,ai_cn_domain,NetEaseMusic_domain,fcm_domain,alibaba_domain,media_cn_domain,xiaomi_domain,steam_cn_domain,pt_cn_domain,public-tracker_domain,115_domain,aliyun_domain,direct_domain,apple_cn_domain,apple_firmware_domain,iptv_domain,private_domain,cn_domain"
   default-nameserver:
-    - 223.5.5.5
     - 119.29.29.29
+    - 180.184.1.1
   proxy-server-nameserver:
-    - quic://dns.alidns.com/dns-query
-    - https://sm2.doh.pub/dns-query 
+    - https://doh.pub/dns-query
+    - https://223.5.5.5/dns-query 
+  direct-nameserver:
+    - https://doh.pub/dns-query
+    - https://223.5.5.5/dns-query
   nameserver:
-    - quic://dns.alidns.com/dns-query
-    - https://sm2.doh.pub/dns-query
+    - https://dns.google/dns-query
+    - https://dns.cloudflare.com/dns-query
   nameserver-policy:
     "rule-set:banAd_domain": rcode://success
 # 锚点区
