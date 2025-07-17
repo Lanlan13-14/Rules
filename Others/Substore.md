@@ -49,17 +49,9 @@ https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_l
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml#noCache
 ```
-##### Lite版填入
+##### NoAd_Lite版填入
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml
-```
-### Stash版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml#noCache
-```
-##### Lite版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml#noCache
 ```
 ## 脚本部分
 ### 机场链接自动填写
@@ -126,17 +118,9 @@ https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_l
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml#noCache
 ```
-##### Lite版填入
+##### NoAd_Lite版填入
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml
-```
-### Stash版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml#noCache
-```
-##### Lite版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml#noCache
 ```
 - 2 新建一个脚本以替换订阅及名称所需代码与基础篇一致包括自定义过滤部分
 
