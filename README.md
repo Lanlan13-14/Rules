@@ -25,24 +25,17 @@
 >
 > Once you use and copy any file of this project, you are deemed to have accepted this disclaimer.
 
->[!NOTE]
-> ## 关于Smart策略组相关
-> Smart策略组由于其内核的复杂性，我考虑在其稳定后再加入
->
->Due to the complexity of the Smart Strategy Group's core, I am considering adding it after it becomes stable.
->
 - 本项目涉及的文件仅用于资源共享和学习研究，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断，有Bug建议可以提issue.
 
 - 请勿将本项目的任何内容用于商业或非法目的，否则后果自负.
 
-- Stash因其语法与mihomo存在明显不同，规则语法存在差异属于正常现象
+- Stash如果需要去广告，请使用mitm的方式而非使用本项目的完整规则
 
 - 订阅更新默认走“🟢 直连”,如需要可手动改成节点选择
 
 - 考虑到部分机场热门地区节点有高低倍率之分，根据普遍情况设置了自动选择组（仅保留标准节点）和手动组（全部节点）
 
-- 本项目提供适用于mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
-mihomo使用mrs格式文件，Stash使用yaml格式文件
+- 本项目提供适用于Mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
 
 - 本项目的订阅转换模板/yaml文件是参考 ACL4SSR，Aethersailor等规则修改而来，基于作者个人理解做出的修改，另外我的更新不固定建议每2-3周下载一次配置文件替换，以获得最佳体验/也可配合Substore一同使用达到如同使用订阅链接的效果(每次更新订阅即会自动拉取配置文件更新，无需手动下载上传)，同时感谢各位的大力支持
 
@@ -56,35 +49,32 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 [游戏规则相关内容](https://github.com/FQrabbit/SSTap-Rule)
 
 ### 标准版/Standard
+###### For Mihomo
 
 [![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)
 **[configfull.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)**
 
 
 ##### 无广告拦截版/No ad blocking version
-
+###### For Mihomo and Stash
 [![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)
 
 **[configfull_NoAd.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)**
 
 ### Lite版本/Lite version
 ###### 该版本高度依赖Geo数据库，请及时更新您的数据库/This version is highly dependent on the Geo database, please update your database in time.
-
+###### For Mihomo
 [![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)
 
 **[configfull_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)**
 
 
 ##### 无广告拦截版/No ad blocking version
-
+###### For Mihomo and Stash 
 [![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)
 
 **[configfull_NoAd_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)**
 
-## 一键生成配置/Generate configuration with one click
-地址
-https://sub.ikar.eu.org/
->
 ## 客户端推荐/Client Recommendation
 •Windows/MacOS/Linux
 >
