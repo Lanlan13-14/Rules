@@ -130,32 +130,28 @@ additional-prefix: '[机场名称]'为可选项无需可删除
 
 ```yaml
 proxy-providers!:
-  Airprot01:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: 'http://www.google-analytics.com/generate_204'
-      interval: 300
-    proxy: "\U0001F7E2 直连"
-    url: >-
-      订阅链接替换
+  Airport_01:
+    <<: *PProviders
+    proxy: "🟢 直连"
+    url: "订阅链接1"
     override:
-      additional-prefix: '[机场名称]'
+      additional-prefix: '[机场名称1]'
       skip-cert-verify: true
       udp: true
-  Airprot02:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: 'http://www.google-analytics.com/generate_204'
-      interval: 300
-    proxy: "\U0001F7E2 直连"
-    url: >-
-      订阅链接替换
+  Airport_02:
+    <<: *PProviders
+    proxy: "🟢 直连"
+    url: "订阅链接2"
     override:
-      additional-prefix: '[机场名称]'
+      additional-prefix: '[机场名称2]'
+      skip-cert-verify: true
+      udp: true
+  Airport_03:
+    <<: *PProviders
+    proxy: "🟢 直连"
+    url: "订阅链接3"
+    override:
+      additional-prefix: '[机场名称3]'
       skip-cert-verify: true
       udp: true
 ```
@@ -179,7 +175,6 @@ function main(config) {
     tolerance: 20,
     interval: 300,
     filter: "(?i)(韩|🇰🇷|kr|Korea)",
-    "exclude-filter": "(?i)(直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic)",
     icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/Korea.png"
   };
 
@@ -237,42 +232,6 @@ function main(config) {
   return config;
 }
 ```
-#### 在节点内添加策略组，比如我想把香港节点里面包含香港自动，那么加入一下代码
-```
-function main(config) {
-  if (!config["proxy-groups"]) {
-    config["proxy-groups"] = [];
-  }
-
-  const hongKongGroupName = "香港节点";
-  const proxyToAdd = "香港自动";
-
-  // 查找 "香港节点" 组
-  const hkGroupIndex = config["proxy-groups"].findIndex(group => group.name === hongKongGroupName);
-
-  if (hkGroupIndex !== -1) {
-    let hkGroup = config["proxy-groups"][hkGroupIndex];
-
-    // 确保是 "select" 类型
-    if (hkGroup.type === "select") {
-      // 创建一个新的对象，确保 proxies 紧跟在 type 后面
-      const updatedGroup = {};
-      Object.keys(hkGroup).forEach((key) => {
-        updatedGroup[key] = hkGroup[key];
-        if (key === "type") {
-          updatedGroup["proxies"] = [proxyToAdd];
-        }
-      });
-
-      // 替换原来的组
-      config["proxy-groups"][hkGroupIndex] = updatedGroup;
-    }
-  }
-
-  return config;
-}
-```
-
 以此类推如果你想再添加照着上方代码修改即可，添加/修改其他策略组也是如此操作即可
 #### 添加自建节点以添加ss2022节点回家为例使用如下代码，其余代理协议需要其他配置可自行参照[mihomo官方文档](https://wiki.metacubex.one)填入
 ```
@@ -392,7 +351,6 @@ function main(config) {
       "自建/家宽节点",
       "全球直连"
     ],
-    "exclude-filter": "(?i)(🟢 直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic)",
     icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/chain.png"
   };
 
@@ -421,8 +379,9 @@ proxies+:
    uuid: 
    network: tcp
    tls: true
-   udp: false
+   udp: true
    flow: xtls-rprx-vision
+   packet-encoding: xudp
    servername: 
    reality-opts:
      public-key: 
@@ -431,6 +390,9 @@ proxies+:
    skip-cert-verify: false
    tfo: false
 ```
+###### 如果不知道或者不会填写上述内容可以考虑借助Sub-store的订阅管理功能
+方式如下
+
 3.修改全局策略组使用如下代码
 ```
 function main(config) {
