@@ -1,5 +1,4 @@
 payload:
-  - 2pfdml.mobaiemby.site
   - aikan.cloud
   - aikan.la
   - cavps.eu.org
@@ -13,6 +12,7 @@ payload:
   - emby.aikan.la
   - emby.haitunt.org
   - emby.nebula-media.org
+  - mcdn.mobaiemby.site
   - notnetflix.cos.cat
   - random.ouonet.org
   - starharn-cf.nebula-media.org
@@ -64,7 +64,6 @@ payload:
   - '*.ednovas.org'
   - '*.em.ssky.me'
   - '*.emby-cf.plusmedia.site'
-  - '*.emby-myg-de.vfing.de'
   - '*.emby-sg.plusmedia.site'
   - '*.emby.aiyowei.ml'
   - '*.emby.bid'
