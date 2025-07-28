@@ -148,10 +148,10 @@ dns:
     - 180.184.1.1
   proxy-server-nameserver:
     - https://doh.pub/dns-query
-    - https://101.34.254.32/ihtw
+    - https://doh-pure.onedns.net/dns-query
   direct-nameserver:
     - https://doh.pub/dns-query
-    - https://101.34.254.32/ihtw
+    - https://doh-pure.onedns.net/dns-query
   nameserver:
     - https://dns.google/dns-query
     - https://dns.cloudflare.com/dns-query
