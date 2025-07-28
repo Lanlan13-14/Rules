@@ -390,10 +390,38 @@ proxies+:
    skip-cert-verify: false
    tfo: false
 ```
-###### 如果不知道或者不会填写上述内容可以考虑借助Sub-store的订阅管理功能
+##### 如果不知道或者不会填写上述内容可以考虑借助Sub-store的订阅管理功能
 方式如下
+1.点击Sub-store
+选择订阅管理即首页，添加单条订阅，随便取一个名字
+>
+2.选择本地订阅，粘贴您已有的URI链接
+>
+3.保存
+>
+4.点击刚创建的订阅（非按钮🔘处会有预览选项，选择mihomo配置）复制全部内容
+>
+5.新建一mihomo配置，将获得内容粘贴于脚本处，记得随便起一个名字，预览复制全部内容然后退出，您将得到与上面相一致的内容（注意来源要选择无）
+>
+6.保证缩进正确，添加dialer-proxy: Chain-Proxy并修改proxies为proxies+
+>
+7.检查无误保存预览无报错即可正常使用
+>
+8.若想在订阅管理处完成对Vless节点UDP的支持可使用如下代码
+```
+function operator(proxies, targetPlatform, context) {
+  return proxies.map(proxy => {
+    if (proxy.type === 'vless') {
+      proxy['packet-encoding'] = 'xudp'
+      proxy.udp = true
+    }
+    return proxy
+  })
+}
+```
+在添加脚本处清空原有脚本并粘贴即可
 
-3.修改全局策略组使用如下代码
+### 3.修改全局策略组使用如下代码
 ```
 function main(config) {
   // 确保 `proxy-groups` 存在
@@ -436,4 +464,8 @@ function main(config) {
 </ul>
 </details>
 
-### 若能力有限建议使用[ChatGPT](https://chatgpt.com)复制代码让他按照你的要求修改
+### 若能力有限建议使用
+>[ChatGPT](https://chatgpt.com)
+>[Gemini](https://gemini.google.com/)
+>
+复制代码让他们按照你的要求修改
