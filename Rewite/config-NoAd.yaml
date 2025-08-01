@@ -18,13 +18,13 @@ dns:
     - 180.184.1.1
   proxy-server-nameserver:
     - https://doh.pub/dns-query
-    - https://223.5.5.5/dns-query 
+    - https://doh-pure.onedns.net/dns-query
   direct-nameserver:
     - https://doh.pub/dns-query
-    - https://223.5.5.5/dns-query
+    - https://doh-pure.onedns.net/dns-query
   nameserver:
-    - quic://dns.alidns.com/dns-query
-    - https://sm2.doh.pub/dns-query
+    - https://dns.google/dns-query
+    - https://dns.cloudflare.com/dns-query
 
 # 锚点区
 Proxy_first: &Proxy_first {type: select, proxies: [节点选择, 香港节点, 新加坡节点, 日本节点, 台湾节点, 美国节点, 欧洲节点, 全部节点, 自建/家宽节点, 全球直连]}
