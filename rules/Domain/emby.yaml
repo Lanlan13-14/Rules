@@ -19,6 +19,7 @@ payload:
   - starharn.nebula-media.org
   - web-starharn.nebula-media.org
   - web.nebula-media.org
+  - '*.114514.quest'
   - '*.123456.al'
   - '*.16bit.cfd'
   - '*.20120714.xyz'
@@ -168,6 +169,7 @@ payload:
   - '*.reddust.link'
   - '*.ru.odysseyplus.site'
   - '*.servers.xeton.dev'
+  - '*.shrekmedia.org'
   - '*.shuipo.lol'
   - '*.speedx.one'
   - '*.starcat.eu.org'
@@ -177,6 +179,7 @@ payload:
   - '*.studyfun.live'
   - '*.tanhuatv.site'
   - '*.texon.fans'
+  - '*.theluyuan.com'
   - '*.tkremby.xyz'
   - '*.tv.worldline.space'
   - '*.uuuoo.cc'
