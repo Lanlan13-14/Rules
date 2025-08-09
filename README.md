@@ -115,6 +115,8 @@
 >
 <a href="https://github.com/vernesong/OpenClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/openclash.png" width="32" style="vertical-align:middle;"/> Openclash</a>
 >
+## 快速体验
+https://sub.ikar.eu.org
 ## 🚫广告拦截效果/Test your ad blocking effect
 
 [AdBlock Tester](https://adblock-tester.com)
