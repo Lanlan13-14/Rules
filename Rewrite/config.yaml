@@ -7,39 +7,6 @@ Include_all: &Include_all {type: select, proxies: [节点选择, 香港节点, �
 
 Urltest_Base: &Urltest_Base {type: url-test, include-all: true, tolerance: 20, interval: 300, max-failed-times: 1, hidden: true}
 
-PProviders: &PProviders {type: http, interval: 86400, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}, filter: '^(?!.*(拒绝|直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic))'}
-
-##############################################
-# 机场订阅，Airport_01/02/03名称不能重复,但可修改为自己喜欢的
-# 订阅链接1/2/3是用来写订阅链接的，填入即可
-# 机场名称1/2/3是用来给节点添加备注的，不用记得整行删除
-proxy-providers:
-  Airport_01:
-    <<: *PProviders
-    proxy: "🟢 直连"
-    url: "订阅链接1"
-    override:
-      additional-prefix: '[机场名称1]'
-      skip-cert-verify: true
-      udp: true
-  Airport_02:
-    <<: *PProviders
-    proxy: "🟢 直连"
-    url: "订阅链接2"
-    override:
-      additional-prefix: '[机场名称2]'
-      skip-cert-verify: true
-      udp: true
-  Airport_03:
-    <<: *PProviders
-    proxy: "🟢 直连"
-    url: "订阅链接3"
-    override:
-      additional-prefix: '[机场名称3]'
-      skip-cert-verify: true
-      udp: true
-
-##############################################
 
 
 # 用于下载订阅时指定UA
@@ -155,7 +122,7 @@ dns:
   nameserver:
     - https://dns.google/dns-query
     - https://dns.cloudflare.com/dns-query
-proxies: 
++proxies: 
   - name: "🟢 直连"
     type: direct
     udp: true

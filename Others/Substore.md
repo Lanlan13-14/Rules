@@ -49,17 +49,9 @@ https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_l
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml#noCache
 ```
-##### Lite版填入
+##### NoAd_Lite版填入
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml
-```
-### Stash版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml#noCache
-```
-##### Lite版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml#noCache
 ```
 ## 脚本部分
 ### 机场链接自动填写
@@ -126,17 +118,9 @@ https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_l
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml#noCache
 ```
-##### Lite版填入
+##### NoAd_Lite版填入
 ```
 https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml
-```
-### Stash版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml#noCache
-```
-##### Lite版填入
-```
-https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml#noCache
 ```
 - 2 新建一个脚本以替换订阅及名称所需代码与基础篇一致包括自定义过滤部分
 
@@ -146,32 +130,28 @@ additional-prefix: '[机场名称]'为可选项无需可删除
 
 ```yaml
 proxy-providers!:
-  Airprot01:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: 'http://www.google-analytics.com/generate_204'
-      interval: 300
-    proxy: "\U0001F7E2 直连"
-    url: >-
-      订阅链接替换
+  Airport_01:
+    <<: *PProviders
+    proxy: "🟢 直连"
+    url: "订阅链接1"
     override:
-      additional-prefix: '[机场名称]'
+      additional-prefix: '[机场名称1]'
       skip-cert-verify: true
       udp: true
-  Airprot02:
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: 'http://www.google-analytics.com/generate_204'
-      interval: 300
-    proxy: "\U0001F7E2 直连"
-    url: >-
-      订阅链接替换
+  Airport_02:
+    <<: *PProviders
+    proxy: "🟢 直连"
+    url: "订阅链接2"
     override:
-      additional-prefix: '[机场名称]'
+      additional-prefix: '[机场名称2]'
+      skip-cert-verify: true
+      udp: true
+  Airport_03:
+    <<: *PProviders
+    proxy: "🟢 直连"
+    url: "订阅链接3"
+    override:
+      additional-prefix: '[机场名称3]'
       skip-cert-verify: true
       udp: true
 ```
@@ -195,7 +175,6 @@ function main(config) {
     tolerance: 20,
     interval: 300,
     filter: "(?i)(韩|🇰🇷|kr|Korea)",
-    "exclude-filter": "(?i)(直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic)",
     icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/Korea.png"
   };
 
@@ -253,42 +232,6 @@ function main(config) {
   return config;
 }
 ```
-#### 在节点内添加策略组，比如我想把香港节点里面包含香港自动，那么加入一下代码
-```
-function main(config) {
-  if (!config["proxy-groups"]) {
-    config["proxy-groups"] = [];
-  }
-
-  const hongKongGroupName = "香港节点";
-  const proxyToAdd = "香港自动";
-
-  // 查找 "香港节点" 组
-  const hkGroupIndex = config["proxy-groups"].findIndex(group => group.name === hongKongGroupName);
-
-  if (hkGroupIndex !== -1) {
-    let hkGroup = config["proxy-groups"][hkGroupIndex];
-
-    // 确保是 "select" 类型
-    if (hkGroup.type === "select") {
-      // 创建一个新的对象，确保 proxies 紧跟在 type 后面
-      const updatedGroup = {};
-      Object.keys(hkGroup).forEach((key) => {
-        updatedGroup[key] = hkGroup[key];
-        if (key === "type") {
-          updatedGroup["proxies"] = [proxyToAdd];
-        }
-      });
-
-      // 替换原来的组
-      config["proxy-groups"][hkGroupIndex] = updatedGroup;
-    }
-  }
-
-  return config;
-}
-```
-
 以此类推如果你想再添加照着上方代码修改即可，添加/修改其他策略组也是如此操作即可
 #### 添加自建节点以添加ss2022节点回家为例使用如下代码，其余代理协议需要其他配置可自行参照[mihomo官方文档](https://wiki.metacubex.one)填入
 ```
@@ -408,7 +351,6 @@ function main(config) {
       "自建/家宽节点",
       "全球直连"
     ],
-    "exclude-filter": "(?i)(🟢 直连|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|traffic)",
     icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/chain.png"
   };
 
@@ -437,8 +379,9 @@ proxies+:
    uuid: 
    network: tcp
    tls: true
-   udp: false
+   udp: true
    flow: xtls-rprx-vision
+   packet-encoding: xudp
    servername: 
    reality-opts:
      public-key: 
@@ -447,7 +390,38 @@ proxies+:
    skip-cert-verify: false
    tfo: false
 ```
-3.修改全局策略组使用如下代码
+##### 如果不知道或者不会填写上述内容可以考虑借助Sub-store的订阅管理功能
+方式如下
+1.点击Sub-store
+选择订阅管理即首页，添加单条订阅，随便取一个名字
+>
+2.选择本地订阅，粘贴您已有的URI链接
+>
+3.保存
+>
+4.点击刚创建的订阅（非按钮🔘处会有预览选项，选择mihomo配置）复制全部内容
+>
+5.新建一mihomo配置，将获得内容粘贴于脚本处，记得随便起一个名字，预览复制全部内容然后退出，您将得到与上面相一致的内容（注意来源要选择无）
+>
+6.保证缩进正确，添加dialer-proxy: Chain-Proxy并修改proxies为proxies+
+>
+7.检查无误保存预览无报错即可正常使用
+>
+8.若想在订阅管理处完成对Vless节点UDP的支持可使用如下代码
+```
+function operator(proxies, targetPlatform, context) {
+  return proxies.map(proxy => {
+    if (proxy.type === 'vless') {
+      proxy['packet-encoding'] = 'xudp'
+      proxy.udp = true
+    }
+    return proxy
+  })
+}
+```
+在添加脚本处清空原有脚本并粘贴即可
+
+### 3.修改全局策略组使用如下代码
 ```
 function main(config) {
   // 确保 `proxy-groups` 存在
@@ -490,4 +464,18 @@ function main(config) {
 </ul>
 </details>
 
-### 若能力有限建议使用[ChatGPT](https://chatgpt.com)复制代码让他按照你的要求修改
+### 若能力有限建议使用
+>[ChatGPT](https://chatgpt.com)
+>[Gemini](https://gemini.google.com/)
+>
+复制代码让他们按照你的要求修改
+
+<h2 id="b">其他</h2>
+<details>
+<summary>展开</summary>
+
+如果你使用多啦a梦（一个转发面板）
+那这有一个查询流量的api可以给Sub-store使用
+```
+http(s)://面板连接地址/api/v1/open_api/sub_store?user=用户名&pwd=密码&tunnel=隧道id
+```

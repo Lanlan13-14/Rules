@@ -9,6 +9,12 @@
 > 中国大陆用户使用请遵守本国法律法规
 >
 > Mainland China users please abide by the laws and regulations of your country.
+>
+> 因使用Mihomo Party而造成的任何bug与错误不提供任何支持issue和讨论都将被直接关闭
+> 
+> No support is provided for Mihomo Party-related bugs or errors. all such issues and discussions will be closed immediately.
+>
+> Мы не предоставляем поддержку по вопросам, связанным с использованием Mihomo Party. Все соответствующие обращения и обсуждения будут немедленно закрыты без исключений.
 
 ## 免责申明/Disclaimer
 
@@ -29,14 +35,13 @@
 
 - 请勿将本项目的任何内容用于商业或非法目的，否则后果自负.
 
-- Stash因其语法与mihomo存在明显不同，规则语法存在差异属于正常现象
+- Stash如果需要去广告，请使用mitm的方式而非使用本项目的完整规则
 
 - 订阅更新默认走“🟢 直连”,如需要可手动改成节点选择
 
 - 考虑到部分机场热门地区节点有高低倍率之分，根据普遍情况设置了自动选择组（仅保留标准节点）和手动组（全部节点）
 
-- 本项目提供适用于mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
-mihomo使用mrs格式文件，Stash使用yaml格式文件
+- 本项目提供适用于Mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
 
 - 本项目的订阅转换模板/yaml文件是参考 ACL4SSR，Aethersailor等规则修改而来，基于作者个人理解做出的修改，另外我的更新不固定建议每2-3周下载一次配置文件替换，以获得最佳体验/也可配合Substore一同使用达到如同使用订阅链接的效果(每次更新订阅即会自动拉取配置文件更新，无需手动下载上传)，同时感谢各位的大力支持
 
@@ -50,65 +55,58 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 [游戏规则相关内容](https://github.com/FQrabbit/SSTap-Rule)
 
 ### 标准版/Standard
+###### For Mihomo and Stash
 
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)
 **[configfull.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml)**
 
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml)Stash使用/For Stash➡️
-**[configfull_Stash.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash.yaml)**
 
 ##### 无广告拦截版/No ad blocking version
-
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+###### For Mihomo and Stash
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)
 
 **[configfull_NoAd.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml)**
 
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash.yaml)Stash使用/For Stash➡️
-
-**[configfull_NoAd_Stash.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash.yaml)**
-
 ### Lite版本/Lite version
 ###### 该版本高度依赖Geo数据库，请及时更新您的数据库/This version is highly dependent on the Geo database, please update your database in time.
-
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+###### For Mihomo and Stash
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)
 
 **[configfull_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml)**
 
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml)Stash使用/For Stash➡️
-
-**[configfull_Stash_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_Stash_lite.yaml)**
 
 ##### 无广告拦截版/No ad blocking version
-
-[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)Mihomo使用/For Mihomo（支持最新tf版stash）➡️
+###### For Mihomo and Stash 
+[![Mihomo](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)
 
 **[configfull_NoAd_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml)**
-
-[![Stash](https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash-mini.png)](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash_lite.yaml)Stash使用/For Stash➡️
-
-**[configfull_NoAd_Stash_lite.yaml](https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_Stash_lite.yaml)**
 
 ## 客户端推荐/Client Recommendation
 •Windows/MacOS/Linux
 >
-<a href="https://github.com/mihomo-party-org/mihomo-party"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Mihomo-Party</a>
+<a href="https://github.com/xishang0128/sparkle"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Sparkle</a>
 >
 <a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
 >
 >
 •Android
 >
-<a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
->
 <a href="https://github.com/KaringX/clashmi"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
+<a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
 >
 •iOS
 >
 <a href="https://apps.apple.com/us/app/pharos-pro/id1456610173"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/pharos.png" width="32" style="vertical-align:middle;"/> Pharos</a>
 >
+<a href="https://apps.apple.com/us/app/clash-mi/id6744321968"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
 <a href="https://apps.apple.com/app/stash/id1596063349?platform=iphone&l=zh-CN"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/stash.png" width="32" style="vertical-align:middle;"/> Stash</a>
 >
-<a href="https://apps.apple.com/us/app/clash-mi/id6744321968"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashmi.png" width="32" style="vertical-align:middle;"/> ClashMi</a>
+>
+•HarmonyOS
+>
+<a href="https://github.com/xiaobaigroup/ClashBox"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/clashbox.png" width="32" style="vertical-align:middle;"/> ClashBox</a>  
 >
 >
 •Openwrt
@@ -117,6 +115,8 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 >
 <a href="https://github.com/vernesong/OpenClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/openclash.png" width="32" style="vertical-align:middle;"/> Openclash</a>
 >
+## 快速体验
+https://sub.ikar.eu.org
 ## 🚫广告拦截效果/Test your ad blocking effect
 
 [AdBlock Tester](https://adblock-tester.com)
@@ -149,14 +149,20 @@ mihomo使用mrs格式文件，Stash使用yaml格式文件
 
 •[SSTap](https://github.com/FQrabbit/SSTap-Rule)
 
+•[Kwisma](https://github.com/Kwisma/cf-worker-mihomo)
 
-# Tip
-生活是条双行道，
-这是一个简单而深刻，且不可否认的事实。如遇问题或建议欢迎指出，同时确保你的帖子包含对他人来说有用的细节和信息。通过Github社区分享你的发现。同样地分享你遇到的问题
-也感谢每一位为该项目做出贡献的开发者，是他们为该项目添砖加瓦
-请不要成为一只“吸取帮助的吸血鬼”
-
-Life is a two-way street.
-This is a simple yet profound and undeniable fact. If you encounter any problems or have suggestions, feel free to point them out, while ensuring that your post contains useful details and information for others. Share your discoveries with the GitHub community. Likewise, share the problems you've encountered.
-We also thank every developer who has contributed to this project; it is their efforts that have helped build and improve it.
-Please do not become a 'help vampire'.
+> [!TIP]
+> **生活是一条双行道，这是一个简单而深刻的事实。**  
+> 如果你在使用过程中遇到问题或有任何建议，欢迎指出。请确保你的帖子包含对他人有用的细节与信息，并通过 GitHub 社区分享你的发现。  
+> 同样地，也欢迎分享你遇到的问题。  
+> 感谢每一位为本项目做出贡献的开发者，正是他们的努力让项目不断进步。  
+> 请不要成为只索取不回馈的“伸手党”。
+>
+> **Life is a two-way street. This is a simple, profound, and undeniable truth.**  
+> If you encounter any problems or have suggestions, feel free to report them. Just make sure your post includes helpful details and information for others.  
+> Share your findings with the GitHub community — and also share the issues you’ve run into.  
+> We’re grateful to every developer who has contributed to this project; your efforts build the foundation we stand on.  
+> Please don’t be a “help vampire.”
+>
+> 如果你觉得这个项目对你有帮助，欢迎点击右上角的 ⭐Star 支持我们，让更多人了解并使用这个项目。  
+> If you find this project helpful, please click ⭐Star in the upper-right corner to support us — and help more people discover and use it.

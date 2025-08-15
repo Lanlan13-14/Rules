@@ -132,7 +132,6 @@ dns:
   listen: 0.0.0.0:1053
   ipv6: true
   prefer-h3: false # 是否开启 DoH 支持 HTTP/3，将并发尝试
-  respect-rules: true
   # 模式切换 redir-host / fake-ip
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
@@ -140,13 +139,10 @@ dns:
   # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "rule-set:fakeip_filter_domain,game_cn_domain,bank_cn_domain,wechat_domain,ai_cn_domain,NetEaseMusic_domain,fcm_domain,alibaba_domain,fcm_domain,media_cn_domain,xiaomi_domain,steam_cn_domain,pt_cn_domain,public-tracker_domain,115_domain,aliyun_domain,direct_domain,apple_cn_domain,apple_firmware_domain,iptv_domain,private_domain,cn_domain"
+    - "rule-set:fakeip_filter_domain,game_cn_domain,bank_cn_domain,wechat_domain,ai_cn_domain,NetEaseMusic_domain,fcm_domain,alibaba_domain,media_cn_domain,xiaomi_domain,steam_cn_domain,pt_cn_domain,public-tracker_domain,115_domain,aliyun_domain,direct_domain,apple_cn_domain,apple_firmware_domain,iptv_domain,private_domain,cn_domain"
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
-  proxy-server-nameserver:
-    - quic://dns.alidns.com/dns-query
-    - https://sm2.doh.pub/dns-query 
   nameserver:
     - quic://dns.alidns.com/dns-query
     - https://sm2.doh.pub/dns-query
@@ -178,8 +174,8 @@ proxy-groups:
   - {name: LINE, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/line.png"}
   - {name: Signal, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/signal.png"}
   - {name: TikTok, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/tiktok.png"}
-  - {name: NETFLIX, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netfix.png"}
-  - {name: DisneyPlus, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disneyplus.png"}
+  - {name: NETFLIX, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/netflix.png"}
+  - {name: DisneyPlus, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/disney.png"}
   - {name: HBO, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/hbo.png"}
   - {name: Primevideo, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/primevideo.png"}
   - {name: AppleTV, <<: *Proxy_first, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/appletv.png"}
@@ -200,7 +196,7 @@ proxy-groups:
   - {name: STEAM,type: select, <<: *Include_all, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/steam.png"}
   - {name: 全球直连, type: select, proxies: [🟢 直连, 节点选择], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png"}
   - {name: Final, type: select, <<: *Include_all,  icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png"}
-  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?i)(自建|CF|The_house|private)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
+  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?i)(自建|CF|The_house|private|home|家宽)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
   - {name: 香港节点, type: select, proxies: [香港自动, 香港均衡], include-all: true, filter: "(?i)(港|hk|hongkong|Hong Kong)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Hongkong.png"}
   - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, filter: "(?i)(新|🇸🇬|SG|singapore)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png"}
   - {name: 日本节点, type: select, proxies: [日本自动, 日本均衡], include-all: true, filter: "(?i)(日本|🇯🇵|JP|Japan)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png"}
