@@ -1,0 +1,82 @@
+name: Daily batch update configs
+
+on:
+  schedule:
+    # 每天东京/北京时间 05:00 执行 (UTC 20:00)
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-configs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch and transform all configs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p Rewrite
+
+          # 要处理的 URL 列表
+          urls=(
+            "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull.yaml"
+            "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd.yaml"
+            "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_lite.yaml"
+            "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/configfull_NoAd_lite.yaml"
+          )
+
+          for url in "${urls[@]}"; do
+            tmp="$(mktemp)"
+            curl -fsSL "$url" -o "$tmp"
+
+            # 生成目标文件名（configfull → config）
+            base="$(basename "$url")"
+            outname="${base/configfull/config}"
+            outfile="Rewrite/$outname"
+
+            # 1) 只在 proxy-groups 之前替换顶级 proxies: → +proxies:
+            awk 'BEGIN{before_pg=1}
+                 /^[[:space:]]*proxy-groups:/ {before_pg=0}
+                 {
+                   if (before_pg && $0 ~ /^[[:space:]]*proxies:[[:space:]]*$/) {
+                     sub(/proxies:/, "+proxies:")
+                   }
+                   print
+                 }' "$tmp" > "${tmp}_step1"
+
+            # 2) 删除 PProviders 块（缩进无关，直到第二个分隔线）
+            awk 'BEGIN{inblock=0;delims=0}
+                 {
+                   if(inblock){
+                     if($0 ~ /^##############################################$/){
+                       delims++
+                       if(delims==2){inblock=0; next} else {next}
+                     }
+                     next
+                   }
+                   if($0 ~ /^[[:space:]]*PProviders:.*&PProviders/){
+                     inblock=1; delims=0; next
+                   }
+                   print
+                 }' "${tmp}_step1" > "$outfile"
+
+            rm -f "$tmp" "${tmp}_step1"
+            echo "Processed $url -> $outfile"
+          done
+
+      - name: Commit and push
+        shell: bash
+        run: |
+          git add Rewrite/
+          git commit -m "Auto update configs in /Rewrite" || echo "No changes to commit."
+          git push
