@@ -35,6 +35,8 @@
 
 - 请勿将本项目的任何内容用于商业或非法目的，否则后果自负.
 
+- 有问题请提交issue，仅通过issue回复
+
 - Stash如果需要去广告，请使用mitm的方式而非使用本项目的完整规则
 
 - 订阅更新默认走“🟢 直连”,如需要可手动改成节点选择
@@ -45,7 +47,7 @@
 
 - 本项目的订阅转换模板/yaml文件是参考 ACL4SSR，Aethersailor等规则修改而来，基于作者个人理解做出的修改，另外我的更新不固定建议每2-3周下载一次配置文件替换，以获得最佳体验/也可配合Substore一同使用达到如同使用订阅链接的效果(每次更新订阅即会自动拉取配置文件更新，无需手动下载上传)，同时感谢各位的大力支持
 
-#### Substore部署使用教程，高级玩法请将Substore更新至最新版本，注意更新前请先备份以防止配置丢失
+#### Substore部署使用教程，高级玩法请将Substore更新至最新版本，注意更新前请先备份以防止配置丢失，另外注意请确保有文件页面后再进行操作
 
 <a href="https://github.com/Lanlan13-14/Rules/blob/main/Others/Substore.md"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/Sub-Store.png" width="32" style="vertical-align:middle;"/> Sub-store结合教程</a>
 >
