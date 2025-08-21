@@ -479,3 +479,40 @@ function main(config) {
 ```
 http(s)://面板连接地址/api/v1/open_api/sub_store?user=用户名&pwd=密码&tunnel=隧道id
 ```
+如果你不习惯使用proxy-providers的方式获得节点，可以使用
+rewrite目录下的文件，选择添加mihomo配置，来源选择你在订阅管理处处理好的节点，脚本填入rewrite目录下的raw格式链接保存即可
+
+<h2 id="b">VPS避坑列表</h2>
+<details>
+<summary>展开</summary>
+
+<table>
+  <thead>
+    <tr>
+      <th>序号</th>
+      <th>商家名称</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Acck</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Akile</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Akko</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>OrangeVPS（建站用途可购入其余不推荐）</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>如果您觉得你个人使用良好，那当我没说。<br>
+若你是VPS小白请记住远离上述VPS，你贪便宜省的每一分钱，都会以回旋镖的形式给你致命一击。</p>
+</details>
