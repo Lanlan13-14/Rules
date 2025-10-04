@@ -157,7 +157,7 @@ proxy-groups:
   - {name: STEAM,type: select, <<: *Include_all, icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/steam.png"}
   - {name: 全球直连, type: select, proxies: [🟢 直连, 🔗 代理], icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/direct.png"}
   - {name: Final, type: select, <<: *Include_all,  icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/final.png"}
-  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|CF|The_house|private|home|家宽|hgc|HKT|HKBN|icable|Hinet|att))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
+  - {name: 自建/家宽节点, type: select, include-all: true, filter: "(?=.*(?i)(自建|CF|The_house|private|home|家宽|hgc|HKT|HKBN|icable|Hinet|att))", exclude-filter: "(?=.*(?i)(Seattle))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/private_node.png"}
   - {name: 香港节点, type: select, proxies: [香港自动, 香港均衡], include-all: true, filter: "(?=.*(?i)(港|hk|hongkong|Hong Kong|🇭🇰))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Hongkong.png"}
   - {name: 新加坡节点, type: select, proxies: [新加坡自动, 新加坡均衡], include-all: true, filter: "(?=.*(?i)(新|🇸🇬|SG|singapore))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png"}
   - {name: 日本节点, type: select, proxies: [日本自动, 日本均衡], include-all: true, filter: "(?=.*(?i)(日本|🇯🇵|JP|Japan))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png"}
