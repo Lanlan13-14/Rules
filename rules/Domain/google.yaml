@@ -15,11 +15,13 @@ payload:
   - +.adsensecustomsearchads.com
   - +.adsenseformobileapps.com
   - +.adservice.google.com
+  - +.adtrafficquality.google
   - +.advertisercommunity.com
   - +.advertiserscommunity.com
   - +.adwords-community.com
   - +.adwords.com
   - +.adwordsexpress.com
+  - +.analytics-alv.google.com
   - +.android
   - +.android.com
   - +.androidify.com
@@ -176,6 +178,7 @@ payload:
   - +.episodic.com
   - +.fastlane.ci
   - +.fastlane.tools
+  - +.fcmatch.google.com
   - +.feedburner.com
   - +.fflick.com
   - +.financeleadsonline.com
