@@ -47,7 +47,7 @@ external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-p
 
 # 匹配进程 always/strict/off
 find-process-mode: strict
-global-client-fingerprint: random
+# global-client-fingerprint: random
 keep-alive-idle: 600
 keep-alive-interval: 30
 
