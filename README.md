@@ -82,7 +82,10 @@
 ## 客户端推荐/Client Recommendation
 •Windows/MacOS/Linux
 >
-<a href="https://github.com/INKCR0W/sparkle"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Sparkle</a>
+<a href="https://github.com/xishang0128/sparkle"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Sparkle</a>
+>
+>
+<a href="https://github.com/INKCR0W/sparkle"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/mihomo.png" width="32" style="vertical-align:middle;"/> Sparkle Fork</a>
 >
 <a href="https://github.com/chen08209/FlClash"><img src="https://raw.githubusercontent.com/Lanlan13-14/Icon-for-webui/refs/heads/main/flclash.png" width="32" style="vertical-align:middle;"/> Flclash</a>
 >
