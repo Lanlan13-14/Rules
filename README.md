@@ -39,6 +39,8 @@
 
 - 本项目提供适用于Mihomo/Stash的[游戏规则](https://github.com/Lanlan13-14/Rules/tree/main/rules%2FGame)，但考虑到这类规则的特殊性，需要请自行添加
 
+- 游戏加速推荐使用[MelodyGameAcc](https://github.com/JohnsonRan/MelodyGameAccPublic)
+
 - 梅林clash请使用Sub-store展开锚点后再使用
 
 - 本项目的订阅转换模板/yaml文件是参考 ACL4SSR，Aethersailor等规则修改而来，基于作者个人理解做出的修改，另外我的更新不固定建议每2-3周下载一次配置文件替换，以获得最佳体验/也可配合Substore一同使用达到如同使用订阅链接的效果(每次更新订阅即会自动拉取配置文件更新，无需手动下载上传)，同时感谢各位的大力支持
