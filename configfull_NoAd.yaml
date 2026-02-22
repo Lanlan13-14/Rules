@@ -138,6 +138,7 @@ dns:
   # 模式切换 redir-host / fake-ip
   enhanced-mode: fake-ip
   fake-ip-range: 28.0.0.1/8
+  fake-ip-range6: 2001:480:abcd::1/64
   # 模式切换 whitelist/blacklist 
   # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
   fake-ip-filter-mode: blacklist
