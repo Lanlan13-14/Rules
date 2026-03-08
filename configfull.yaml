@@ -269,6 +269,7 @@ rules:
   - RULE-SET,discord_asn,Discord,no-resolve
   - RULE-SET,signal_domain,Signal
   - RULE-SET,tencent!cn_domain,节点选择
+  - RULE-SET,tencent_domain,全球直连
   - RULE-SET,iptv_domain,全球直连
   - RULE-SET,private_domain,全球直连
   - DOMAIN-KEYWORD,hk.tv.global.mi.com,节点选择
@@ -399,6 +400,7 @@ rule-providers:
   apple_cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple%40cn.mrs" }
   alibaba_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/alibaba.mrs" }
   tencent!cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tencent%40!cn.mrs" }
+  tencent_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tencent.mrs" }
   ai_cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-cn.mrs" }
   discord_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/discord.mrs" }
   fcm_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/googlefcm.mrs" }
