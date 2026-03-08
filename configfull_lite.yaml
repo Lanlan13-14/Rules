@@ -223,15 +223,15 @@ rules:
   - GEOIP,private,全球直连,no-resolve
   - GEOSITE,category-games@cn,全球直连
   - GEOSITE,category-public-tracker,全球直连
-  - GEOSITE,openai,AI
-  - GEOSITE,category-ai-!cn,AI
-  - RULE-SET,ai_domain,AI
   - GEOSITE,youtube,YouTube
   - GEOSITE,google,Google
   - GEOIP,google,Google,no-resolve
   - GEOSITE,github,GitHub
   - GEOSITE,onedrive,OneDrive
   - GEOSITE,microsoft,Microsoft
+  - GEOSITE,openai,AI
+  - GEOSITE,category-ai-!cn,AI
+  - RULE-SET,ai_domain,AI
   - GEOSITE,apple,Apple
   - GEOSITE,telegram,Telegram
   - GEOIP,telegram,Telegram,no-resolve
