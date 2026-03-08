@@ -237,9 +237,6 @@ rules:
   - RULE-SET,Wise_domain,Wise
   - RULE-SET,paypal_domain,PayPal
   - RULE-SET,proxy_domain,节点选择
-  - RULE-SET,ai!cn_domain,AI
-  - RULE-SET,ai_domain,AI
-  - RULE-SET,openai_domain,AI
   - RULE-SET,biliintl_domain,哔哩东南亚
   - RULE-SET,bilibili_domain,哔哩哔哩
   - RULE-SET,bilibili_ip,哔哩哔哩,no-resolve
@@ -260,6 +257,9 @@ rules:
   - RULE-SET,google_ip,Google,no-resolve
   - RULE-SET,onedrive_domain,OneDrive
   - RULE-SET,microsoft_domain,Microsoft
+  - RULE-SET,ai!cn_domain,AI
+  - RULE-SET,ai_domain,AI
+  - RULE-SET,openai_domain,AI
   - RULE-SET,telegram_domain,Telegram
   - RULE-SET,telegram_ip,Telegram,no-resolve
   - RULE-SET,line_domain,LINE
