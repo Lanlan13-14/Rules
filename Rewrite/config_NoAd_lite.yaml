@@ -167,10 +167,10 @@ proxy-groups:
   - {name: 欧洲节点, type: select, include-all: true, filter: "(?=.*(?i)(🇦🇱|🇦🇩|🇦🇹|🇧🇾|🇧🇪|🇧🇦|🇧🇬|🇭🇷|🇨🇾|🇨🇿|🇩🇰|🇪🇪|🇫🇮|🇫🇷|🇩🇪|🇬🇷|🇭🇺|🇮🇸|🇮🇪|🇮🇹|🇽🇰|🇱🇻|🇱🇮|🇱🇹|🇱🇺|🇲🇹|🇲🇩|🇲🇨|🇲🇪|🇳🇱|🇲🇰|🇳🇴|🇵🇱|🇵🇹|🇷🇴|🇷🇺|🇸🇲|🇷🇸|🇸🇰|🇸🇮|🇪🇸|🇸🇪|🇨🇭|🇹🇷|🇺🇦|🇬🇧|🇻🇦))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/European.png"}
   - {name: 全部节点, type: select, include-all: true, tolerance: 20, interval: 300, exclude-filter: "(?i)(🟢 直连)", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/all.png"}
   - {name: 香港自动, <<: *Urltest_Base, filter: "(?=.*(?i)(香港|hk|hongkong|Hong Kong|🇭🇰))" ,exclude-filter: "(?=.*(?i)(The_HK_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/hk_automatic_selection.png"}
-  - {name: 新加坡自动, <<: *Urltest_Base, filter: "(?=.*(?i)(新|🇸🇬|SG|Singapore))" ,exclude-filter: "(?=.*(?i)(The_SG_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus|新西兰))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"}
-  - {name: 日本自动, <<: *Urltest_Base, filter: "(?=.*(?i)(日本|🇯🇵|JP|Japan))" ,exclude-filter: "(?=.*(?i)(The_JP_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"}
-  - {name: 台湾自动, <<: *Urltest_Base, filter: "(?=.*(?i)(台|🇹🇼|TW|Taiwan))" ,exclude-filter: "(?=.*(?i)(The_TW_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"}
-  - {name: 美国自动, <<: *Urltest_Base, filter: "(?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))" ,exclude-filter: "(?=.*(?i)(The_US_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|russia|austria|plus|traffic|Australia|rus|aus))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/automation2.png"}
+  - {name: 新加坡自动, <<: *Urltest_Base, filter: "(?=.*(?i)(新|🇸🇬|SG|Singapore))" ,exclude-filter: "(?=.*(?i)(The_SG_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus|新西兰))", icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/sg_automatic_selection.png"}
+  - {name: 日本自动, <<: *Urltest_Base, filter: "(?=.*(?i)(日本|🇯🇵|JP|Japan))" ,exclude-filter: "(?=.*(?i)(The_JP_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/jp_automatic_selection.png"}
+  - {name: 台湾自动, <<: *Urltest_Base, filter: "(?=.*(?i)(台|🇹🇼|TW|Taiwan))" ,exclude-filter: "(?=.*(?i)(The_TW_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/tw_automatic_selection.png"}
+  - {name: 美国自动, <<: *Urltest_Base, filter: "(?=.*(?i)(美|🇺🇲|🇺🇸|US|America|United States|UnitedState|Los Angeles|Chicago|Ashburn|Seattle|Kansas))" ,exclude-filter: "(?=.*(?i)(The_US_automation|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|russia|austria|plus|traffic|Australia|rus|aus))", icon: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/icon/usa_automatic_selection.png"}
   - {name: 香港均衡, type: load-balance, include-all: true, strategy: consistent-hashing, hidden: true, filter: "(?=.*(?i)(香港|hk|hongkong|Hong Kong|🇭🇰))" ,exclude-filter: "(?=.*(?i)(The_HK_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
   - {name: 新加坡均衡, type: load-balance, include-all: true, strategy: consistent-hashing, hidden: true, filter: "(?=.*(?i)(新|🇸🇬|SG|Singapore))" ,exclude-filter: "(?=.*(?i)(The_SG_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus|新西兰))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
   - {name: 日本均衡, type: load-balance, include-all: true, strategy: consistent-hashing, hidden: true, filter: "(?=.*(?i)(日本|🇯🇵|JP|Japan))" ,exclude-filter: "(?=.*(?i)(The_JP_balance|wcloud|0倍|0\\.1倍|0\\.01倍|0\\.3X|0\\.2x|0\\.5x|3X|2x|1\\.5x|traffic|plus))", icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/load-balance.png"}
@@ -186,15 +186,15 @@ rules:
   - GEOIP,private,全球直连,no-resolve
   - GEOSITE,category-games@cn,全球直连
   - GEOSITE,category-public-tracker,全球直连
-  - GEOSITE,openai,AI
-  - GEOSITE,category-ai-!cn,AI
-  - RULE-SET,ai_domain,AI
   - GEOSITE,youtube,YouTube
   - GEOSITE,google,Google
   - GEOIP,google,Google,no-resolve
   - GEOSITE,github,GitHub
   - GEOSITE,onedrive,OneDrive
   - GEOSITE,microsoft,Microsoft
+  - GEOSITE,openai,AI
+  - GEOSITE,category-ai-!cn,AI
+  - RULE-SET,ai_domain,AI
   - GEOSITE,apple,Apple
   - GEOSITE,telegram,Telegram
   - GEOIP,telegram,Telegram,no-resolve
