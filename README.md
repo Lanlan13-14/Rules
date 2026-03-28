@@ -98,7 +98,7 @@
 >
 •MacOS
 >
-<a href="https://github.com/Sitoi/ClashBar"><img src="https://github.com/Sitoi/ClashBar/blob/dev/Sources/ClashBar/Resources/Brand/logo.png" width="32" style="vertical-align:middle;"/> ClashBar</a>
+<a href="https://github.com/Sitoi/ClashBar"><img src="https://raw.githubusercontent.com/Sitoi/ClashBar/refs/heads/main/imgs/logo.png" width="32" style="vertical-align:middle;"/> ClashBar</a>
 >
 •Android
 >
