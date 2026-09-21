@@ -188,6 +188,7 @@ payload:
   - +.fflick.com
   - +.financeleadsonline.com
   - +.firebase.com
+  - +.firebase.dev
   - +.firebase.io
   - +.firebaseapp.com
   - +.firebaseio.com
@@ -899,9 +900,10 @@ payload:
   - download.mlcc.google.com
   - download.tensorflow.google.com
   - firebase-settings.crashlytics.com
-  - firebase.google.com
   - firebase.googleapis.com
   - firebaseappcheck.googleapis.com
+  - firebaseappdistribution.googleapis.com
+  - firebaseapptesters.googleapis.com
   - firebasedynamiclinks-ipv4.googleapis.com
   - firebasedynamiclinks-ipv6.googleapis.com
   - firebasedynamiclinks.googleapis.com
