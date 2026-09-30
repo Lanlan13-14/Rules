@@ -920,6 +920,8 @@ payload:
   - g1.gstatic.com
   - g2.gstatic.com
   - g3.gstatic.com
+  - geminiweb-pa.clients.google.com
+  - geminiweb-pa.clients6.google.com
   - gonglchuangl.net
   - gongyichuangyi.net
   - google-analytics-cn.com
